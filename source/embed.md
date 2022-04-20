@@ -3,7 +3,7 @@
 A Discord embed.
 
 ```
-struct 'embed' [rich = true] {
+struct 'embed' [ bool('rich') = true ] {
   class 'head' {
     str head.var(text, title) = sys.presets.blank
     sys.url head.var(link, url) = none
