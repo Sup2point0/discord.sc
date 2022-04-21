@@ -1,5 +1,3 @@
-# Send Functions
-
 ## `send`
 
 ```
@@ -27,6 +25,16 @@ func discord.channel.send(str 'content' = none) [
 | `view` | `discord.view` | |
 | `views` | `discord.view`, `list(discord.view)` | |
 | `delete` | `float`, `datix.time`, `datix.date`, `datix.datetime` | |
+
+### Example
+
+```
+discord.channel(...).send("sup") [
+  | attach = sys.file('sup.svg')
+  | embed = discord.embed() [...] {...}
+  | view = discord.view() [...] {...}
+]
+```
 
 ## `reply`
 
