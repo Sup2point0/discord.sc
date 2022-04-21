@@ -2,7 +2,7 @@
 
 A Discord embed.
 
-```
+```swift
 struct embed [ type = {rich} ] {
   class head {
     str head.var(text, title) = sys.presets.blank
@@ -35,7 +35,7 @@ struct embed [ type = {rich} ] {
 
 ### `create`
 
-```
+```swift
 func create(ctx) [
   | type = "rich"
   |
