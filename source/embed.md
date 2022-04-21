@@ -30,3 +30,44 @@ struct embed [ type = {rich} ] {
   list embed.fields [embed.field] = none
 }
 ```
+
+## Functions
+
+### `create`
+
+```
+func create(ctx) [
+  | type = "rich"
+  |
+  | class head {
+    text = sys.presets.blank
+    link = none
+    class author {
+      text = none
+      link = none
+      icon = none
+    }
+  }
+  | class body {
+    text = sys.presets.blank
+    col = none
+  }
+  class foot {
+    text = sys.presets.blank
+    icon = none
+    time = none
+  }
+  class assets {
+    thumb = none
+    image = none
+  }
+  |
+  | fields = none
+}
+```
+
+#### Options
+
+| option | type | description |
+| :----- | :--- | :---------- |
+| type | `str` | |
