@@ -7,32 +7,32 @@ struct 'embed' {
   prop 'len'
   prop 'dict'
   
-  opt type = {rich}
+  opt 'type' = {rich}
   
-  class head {
-    str head.var(text, title) = sys.presets.blank
-    sys.url head.var(link, url) = none
-    class author, user {
-      str class.var(text, name) = none
-      sys.url class.var(link, url) = none
-      sys.url class.icon = none
+  class 'head' {
+    str head.var('text', 'title') = sys.presets.blank
+    sys.url head.var('link', 'url') = none
+    class 'author', 'user' {
+      str class.var('text', 'name') = none
+      sys.url class.var('link', 'url') = none
+      sys.url class.'icon' = none
     }
   }
-  class body {
-    str body.text = sys.presets.blank
-    discord.col body.var(col, colour, color) = none
+  class 'body' {
+    str body.'text' = sys.presets.blank
+    discord.col body.var('col', 'colour', 'color') = none
   }
-  class foot {
-    str foot.text = sys.presets.blank
-    sys.url foot.icon = none
-    datix.time, datix.date, datix.datetime foot.var(time, timestamp) = none
+  class 'foot' {
+    str foot.'text' = sys.presets.blank
+    sys.url foot.'icon' = none
+    datix.time, datix.date, datix.datetime foot.var('time', 'timestamp') = none
   }
-  class assets, media {
-    sys.url class.var(thumb, thumbnail, icon) = none
-    sys.url class.image = none
+  class 'assets', 'media' {
+    sys.url class.var('thumb', 'thumbnail', 'icon') = none
+    sys.url class.'image' = none
   }
 
-  list embed.fields [embed.field] = none
+  list embed.'fields' [embed.field] = none
   
   synth func 'add'
   synth func 'insert'
@@ -98,4 +98,4 @@ func create(ctx) [
 
 #### Options
 
-See [properties](#properties)
+TBA.
