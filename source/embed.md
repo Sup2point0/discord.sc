@@ -2,7 +2,7 @@
 
 A Discord embed.
 
-```swift
+```coffee
 struct 'embed' {
   prop 'len'
   prop 'dict'
@@ -34,10 +34,10 @@ struct 'embed' {
 
   list embed.'fields' [embed.field] = none
   
-  synth func 'add'
-  synth func 'insert'
-  synth func 'del'
-  synth func 'clear'
+  synth lurk 'add'
+  synth lurk 'insert'
+  synth lurk 'del'
+  synth lurk 'clear'
 }
 ```
 
@@ -48,24 +48,24 @@ struct 'embed' {
 | `len` | `int` | `length` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
 | `dict` | `dict` | `info`, `data` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | `str` | | The type of the embed. |
-| `head.text` | `str` | `title` | |
-| `head.link` | `sys.url` | `url` | |
-| `head.author.text` | `str` | `name` | |
-| `head.author.icon` | `sys.url` | | |
-| `body.text` | `str` | | |
-| `body.col` | `discord.col` | `colour`, `color` | |
-| `foot.text` | `str` | | |
-| `foot.icon` | `sys.url` | | |
-| `foot.time` | `datix.time`, `datix.date`, `datix.datetime` | `timestamp` | |
-| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | |
-| `assets.image` | `sys.url` | | |
-| `fields` | `list[embed.field]` | | |
+| `head.text` | `str` | `title` | The title text. |
+| `head.link` | `sys.url` | `url` | The link of the title. |
+| `head.author.text` | `str` | `name` | The displayed author. |
+| `head.author.icon` | `sys.url` | | The displayed author icon. |
+| `body.text` | `str` | | The main text. |
+| `body.col` | `discord.col` | `colour`, `color` | The accent colour. |
+| `foot.text` | `str` | | The footer text. |
+| `foot.icon` | `sys.url` | | The footer icon. |
+| `foot.time` | `datix.time`, `datix.date`, `datix.datetime` | `timestamp` | The displayed timestamp. |
+| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | The thumbnail. |
+| `assets.image` | `sys.url` | | The image. |
+| `fields` | `list[embed.field]` | | A list of fields to add to the embed. |
 
 ## Functions
 
 ### `create`
 
-```swift
+```coffee
 func create(ctx) [
   | type = "rich"
   |
