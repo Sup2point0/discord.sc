@@ -3,7 +3,10 @@
 A Discord embed.
 
 ```swift
-struct embed {
+struct 'embed' {
+  prop 'len'
+  prop 'dict'
+  
   opt type = {rich}
   
   class head {
@@ -31,9 +34,32 @@ struct embed {
 
   list embed.fields [embed.field] = none
   
-  func addField
+  synth func 'add'
+  synth func 'insert'
+  synth func 'del'
+  synth func 'clear'
 }
 ```
+
+# Properties
+
+| property | type | aliases | description |
+| :------- | :--- | :------ | :---------- |
+| `len` | `int` | `length` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
+| `dict` | `dict` | `info`, `data` | A dictionary representation of the embed. Useful for convenient transfer. |
+| `type` | `str` | | The type of the embed. |
+| `head.text` | `str` | `title` | |
+| `head.link` | `sys.url` | `url` | |
+| `head.author.text` | `str` | `name` | |
+| `head.author.icon` | `sys.url` | | |
+| `body.text` | `str` | | |
+| `body.col` | `discord.col` | `colour`, `color` | |
+| `foot.text` | `str` | | |
+| `foot.icon` | `sys.url` | | |
+| `foot.time` | `datix.time`, `datix.date`, `datix.datetime` | `timestamp` | |
+| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | |
+| `assets.image` | `sys.url` | | |
+| `fields` | `list[embed.field]` | | |
 
 # Functions
 
@@ -72,18 +98,4 @@ func create(ctx) [
 
 ### Options
 
-| option | type | aliases | description |
-| :----- | :--- | :------ | :---------- |
-| `type` | `str` | | |
-| `head.text` | `str` | `title` | |
-| `head.link` | `sys.url` | `url` | |
-| `head.author.text` | `str` | `name` | |
-| `head.author.icon` | `sys.url` | | |
-| `body.text` | `str` | | |
-| `body.col` | `discord.col` | `colour`, `color` | |
-| `foot.text` | `str` | | |
-| `foot.icon` | `sys.url` | | |
-| `foot.time` | `datix.type(time, date, datetime)` | `timestamp` | |
-| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | |
-| `assets.image` | `sys.url` | | |
-| `fields` | `list[embed.field]` | | |
+See [properties](#properties)
