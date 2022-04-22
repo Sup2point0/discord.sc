@@ -41,7 +41,7 @@ struct 'embed' {
 }
 ```
 
-# Properties
+## Properties
 
 | property | type | aliases | description |
 | :------- | :--- | :------ | :---------- |
@@ -61,9 +61,9 @@ struct 'embed' {
 | `assets.image` | `sys.url` | | |
 | `fields` | `list[embed.field]` | | |
 
-# Functions
+## Functions
 
-## `create`
+### `create`
 
 ```swift
 func create(ctx) [
@@ -96,6 +96,6 @@ func create(ctx) [
 }
 ```
 
-### Options
+#### Options
 
 See [properties](#properties)
