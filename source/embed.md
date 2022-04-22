@@ -38,6 +38,8 @@ struct 'embed' {
   synth lurk 'insert'
   synth lurk 'del'
   synth lurk 'clear'
+
+  substruct 'field'
 }
 ```
 
@@ -99,3 +101,14 @@ func create(ctx) [
 #### Options
 
 TBA.
+
+
+# `embed.field`
+
+```coffee
+struct 'field' in embed {
+  str 'title' = sys.presets.blank
+  str 'text' = sys.presets.blank
+  bool 'inline' = false
+}
+```
