@@ -3,7 +3,9 @@
 A Discord embed.
 
 ```swift
-struct embed [ type = {rich} ] {
+struct embed {
+  opt type = {rich}
+  
   class head {
     str head.var(text, title) = sys.presets.blank
     sys.url head.var(link, url) = none
@@ -28,12 +30,14 @@ struct embed [ type = {rich} ] {
   }
 
   list embed.fields [embed.field] = none
+  
+  func addField
 }
 ```
 
-## Functions
+# Functions
 
-### `create`
+## `create`
 
 ```swift
 func create(ctx) [
@@ -52,12 +56,12 @@ func create(ctx) [
     text = sys.presets.blank
     col = none
   }
-  class foot {
+  | class foot {
     text = sys.presets.blank
     icon = none
     time = none
   }
-  class assets {
+  | class assets {
     thumb = none
     image = none
   }
@@ -66,8 +70,20 @@ func create(ctx) [
 }
 ```
 
-#### Options
+### Options
 
-| option | type | description |
-| :----- | :--- | :---------- |
-| type | `str` | |
+| option | type | aliases | description |
+| :----- | :--- | :------ | :---------- |
+| `type` | `str` | | |
+| `head.text` | `str` | `title` | |
+| `head.link` | `sys.url` | `url` | |
+| `head.author.text` | `str` | `name` | |
+| `head.author.icon` | `sys.url` | | |
+| `body.text` | `str` | | |
+| `body.col` | `discord.col` | `colour`, `color` | |
+| `foot.text` | `str` | | |
+| `foot.icon` | `sys.url` | | |
+| `foot.time` | `datix.type(time, date, datetime)` | `timestamp` | |
+| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | |
+| `assets.image` | `sys.url` | | |
+| `fields` | `list[embed.field]` | | |
