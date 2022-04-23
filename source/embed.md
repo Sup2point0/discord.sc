@@ -50,18 +50,38 @@ struct 'embed' {
 | `len` | `int` | `length` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
 | `dict` | `dict` | `info`, `data` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | `str` | | The type of the embed. |
+| `fields` | `list[embed.field]` | | A list of fields to add to the embed. |
+
+### `head`
+
+| property | type | aliases | description |
+| :------- | :--- | :------ | :---------- |
 | `head.text` | `str` | `title` | The title text. |
 | `head.link` | `sys.url` | `url` | The link of the title. |
 | `head.author.text` | `str` | `name` | The displayed author. |
 | `head.author.icon` | `sys.url` | | The displayed author icon. |
+
+### `body`
+
+| property | type | aliases | description |
+| :------- | :--- | :------ | :---------- |
 | `body.text` | `str` | | The main text. |
 | `body.col` | `discord.col` | `colour`, `color` | The accent colour. |
+
+### `foot`
+
+| property | type | aliases | description |
+| :------- | :--- | :------ | :---------- |
 | `foot.text` | `str` | | The footer text. |
 | `foot.icon` | `sys.url` | | The footer icon. |
 | `foot.time` | `datix.time`, `datix.date`, `datix.datetime` | `timestamp` | The displayed timestamp. |
+
+### `assets`
+
+| property | type | aliases | description |
+| :------- | :--- | :------ | :---------- |
 | `assets.thumb` | `sys.url` | `thumbnail`, `icon` | The thumbnail. |
 | `assets.image` | `sys.url` | | The image. |
-| `fields` | `list[embed.field]` | | A list of fields to add to the embed. |
 
 ## Functions
 
