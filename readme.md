@@ -38,6 +38,6 @@ Many more examples can be found in [specimens](specimens).
 
 ## Syntax
 
-discord.sc encourages an object-oriented syntax style, although supports various others too, including supcode’s distinctive expansive syntax.
+discord.sc encourages an object-oriented syntax style, although supports various others too.
 
-Throughout this repository all code blocks will use CoffeeScript syntax highlighting, which is highly flexible and is perfect for adding contrast, while not (significantly) detracting or disrupting any semantics of the code.
+Throughout this repository all code blocks will use CoffeeScript syntax highlighting, which is highly flexible and perfect for adding contrast, while not (significantly) disrupting or detracting from any semantics of the code.
