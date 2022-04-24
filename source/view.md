@@ -1,0 +1,3 @@
+# `view`
+
+A Discord view.
