@@ -45,21 +45,21 @@ struct 'embed' {
 
 ## Properties
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `len` | `int` | `length` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
-| `dict` | `dict` | `info`, `data` | A dictionary representation of the embed. Useful for convenient transfer. |
-| `type` | `str` | | The type of the embed. |
-| `fields` | `list[embed.field]` | | A list of fields to add to the embed. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `len` | `length` | `int` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
+| `dict` | `info`, `data` | `dict` | A dictionary representation of the embed. Useful for convenient transfer. |
+| `type` | | `str` | The type of the embed. |
+| `fields` | | `list[embed.field]` | A list of fields to add to the embed. |
 
 ### `head`
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `head.text` | `str` | `title` | The title text. |
-| `head.link` | `sys.url` | `url` | The link of the title. |
-| `head.author.text` | `str` | `name` | The displayed author. |
-| `head.author.icon` | `sys.url` | | The displayed author icon. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `head.text` | `title` | `str` | The title text. |
+| `head.link` | `url` | `sys.url` | The link of the title. |
+| `head.author.text` | `name` | `str` | The displayed author. |
+| `head.author.icon` | | `sys.url` | The displayed author icon. |
 
 ### `body`
 
@@ -115,7 +115,7 @@ func create(ctx) [
   }
   |
   | fields = none
-}
+]
 ```
 
 #### Options
@@ -132,3 +132,31 @@ struct 'field' in embed {
   bool 'inline' = false
 }
 ```
+
+## Properties
+
+| property | aliases type | | description |
+| :------- | :------ :--- | | :---------- |
+| `title` | `name` `str` | | The title text. |
+| `text` | `value` `str` | | The main text. |
+| `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
+
+## Functions
+
+### `create`
+
+```coffee
+func create(ctx) [
+  | title = sys.presets.blank
+  | text = sys.presets.blank
+  | inline = false
+]
+```
+
+#### Inputs
+
+| input | aliases | type | description |
+| :---- | :--- | :------ | :---------- |
+| `title` | `name` | `str` | The title text. |
+| `text` | `value` | `str` | The main text. |
+| `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
