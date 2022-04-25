@@ -63,25 +63,25 @@ struct 'embed' {
 
 ### `body`
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `body.text` | `str` | | The main text. |
-| `body.col` | `discord.col` | `colour`, `color` | The accent colour. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `body.text` | | `str` | The main text. |
+| `body.col` | `colour`, `color`| `discord.col`  | The accent colour. |
 
 ### `foot`
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `foot.text` | `str` | | The footer text. |
-| `foot.icon` | `sys.url` | | The footer icon. |
-| `foot.time` | `datix.time`, `datix.date`, `datix.datetime` | `timestamp` | The displayed timestamp. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `foot.text` | | `str` | The footer text. |
+| `foot.icon` | | `sys.url` | The footer icon. |
+| `foot.time` | `timestamp`| `datix.time`, `datix.date`, `datix.datetime`  | The displayed timestamp. |
 
 ### `assets`
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `assets.thumb` | `sys.url` | `thumbnail`, `icon` | The thumbnail. |
-| `assets.image` | `sys.url` | | The image. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `assets.thumb` | `thumbnail`, `icon`| `sys.url`  | The thumbnail. |
+| `assets.image` | | `sys.url` | The image. |
 
 ## Functions
 
@@ -118,9 +118,43 @@ func create(ctx) [
 ]
 ```
 
-#### Options
+#### Inputs
 
 TBA.
+
+### `clearFields`
+
+Clear fields from the embed.
+
+```coffee
+func embed.clearFields(
+  par('index')[int, span, pool] = {all}
+)
+```
+
+#### Inputs
+
+| input | aliases | type | description |
+| :---- | :------ | :--- | :---------- |
+| `index` | `fields` | `int`, `span`, `pool` | The specific index or indexes to clear. |
+
+#### Example
+
+```coffee
+create discord.embed('content') [...
+  | fields = (
+    embed.field()[title = "first" | text = "sup"],
+    embed.field()[title = "second" | text = "sup"],
+    embed.field()[title = "third" | text = "sup"],
+    embed.field()[title = "fourth" | text = "sup"],
+    embed.field()[title = "fifth" | text = "sup"],
+  )
+]
+
+content.clearFields(1)
+content.clearFields(2~3)
+content.clearFields()
+```
 
 
 # `embed.field`
@@ -135,8 +169,8 @@ struct 'field' in embed {
 
 ## Properties
 
-| property | aliases type | | description |
-| :------- | :------ :--- | | :---------- |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
 | `title` | `name` `str` | | The title text. |
 | `text` | `value` `str` | | The main text. |
 | `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
@@ -156,7 +190,7 @@ func create(ctx) [
 #### Inputs
 
 | input | aliases | type | description |
-| :---- | :--- | :------ | :---------- |
+| :---- | :------ | :--- | :---------- |
 | `title` | `name` | `str` | The title text. |
 | `text` | `value` | `str` | The main text. |
 | `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
