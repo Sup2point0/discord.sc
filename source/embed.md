@@ -31,7 +31,7 @@ struct 'embed' {
     sys.url class.'image' = none
   }
 
-  list embed.'fields' [embed.field] = none
+  prop embed.'fields' [embed.field, list[embed.field]] = none
   
   synth exp func 'add'
   synth exp func 'insert'
@@ -48,11 +48,10 @@ struct 'embed' {
 | :------- | :------ | :--- | :---------- |
 | `len` | `length` | `lurk[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
 | `dict` | `info`, `data` | `lurk[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
-| `type` | | `str` | The type of the embed. |
+| `type` | | `slot` | The type of the embed. |
 | `fields` | | `list[embed.field]` | The fields of the embed. |
 
 ### `head`
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `head.text` | `title` | `str` | The title text. |
@@ -61,14 +60,12 @@ struct 'embed' {
 | `head.author.icon` | | `sys.url` | The displayed author icon. |
 
 ### `body`
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `body.text` | | `str` | The main text. |
 | `body.col` | `colour`, `color`| `discord.col`  | The accent colour. |
 
 ### `foot`
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `foot.text` | | `str` | The footer text. |
@@ -76,7 +73,6 @@ struct 'embed' {
 | `foot.time` | `timestamp`| `datix.time`, `datix.date`, `datix.datetime`  | The displayed timestamp. |
 
 ### `assets`
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `assets.thumb` | `thumbnail`, `icon`| `sys.url`  | The thumbnail. |
@@ -85,6 +81,8 @@ struct 'embed' {
 ## Functions
 
 ### `create`
+
+Creates an embed.
 
 ```coffee
 func create(ctx) [
@@ -122,7 +120,7 @@ func create(ctx) [
 
 TBA.
 
-#### Example
+#### Examples
 
 ```coffee
 create discord.embed('content') [
@@ -130,7 +128,11 @@ create discord.embed('content') [
   | body.text = "testing testing"
   | foot.text = "sup"
 ]
+```
 
+Specifying the options with `let` afterwards allows you to adjust values based on previous options.
+
+```coffee
 create discord.embed('content') {
   let head.title = "Example Embed"
   let body.text = "testing *`head.title`* testing"
@@ -144,7 +146,7 @@ Clear fields from the embed.
 
 ```coffee
 func embed.clearFields(
-  par('index')[int, span, pool] = {all}
+  par('index')[index, slot] = {all}
 )
 ```
 
@@ -152,7 +154,7 @@ func embed.clearFields(
 
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
-| `index` | `fields` | `int`, `span`, `pool` | The specific index or indexes to clear. |
+| `index` | `fields` | `int`, `span`, `slot` | The specific index or indexes to clear. |
 
 #### Example
 
