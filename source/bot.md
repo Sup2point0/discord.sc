@@ -5,7 +5,7 @@ A Discord bot.
 ```coffee
 struct 'bot' {
   sys.token 'token' = none
-  discord.intents 'intents' = discord.intents('default')
+  pool 'intents' = {default}
   str 'prefix' = ""
 }
 ```
@@ -14,6 +14,9 @@ struct 'bot' {
 
 | property | type | aliases | description |
 | :------- | :--- | :------ | :---------- |
+| `token` | `discord.token` | `key` | The API key of the bot. |
+| `intents` | `slot` | | The intents the bot will be subscribed to. |
+| `prefix` | `str`, `list[str]` | `command_prefix` | The prefix that precedes all commands. |
 
 ## Functions
 
