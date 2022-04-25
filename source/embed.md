@@ -4,10 +4,9 @@ A Discord embed.
 
 ```coffee
 struct 'embed' {
-  prop 'len'
-  prop 'dict'
-  
-  opt 'type' = {rich}
+  lurk int 'len'
+  pool 'type' = {rich, link, video}
+  dict 'dict'
   
   class 'head' {
     str head.var('text', 'title') = sys.presets.blank
@@ -34,10 +33,10 @@ struct 'embed' {
 
   list embed.'fields' [embed.field] = none
   
-  synth lurk 'add'
-  synth lurk 'insert'
-  synth lurk 'del'
-  synth lurk 'clear'
+  synth exp func 'add'
+  synth exp func 'insert'
+  synth exp func 'del'
+  synth exp func 'clear'
 
   substruct 'field'
 }
@@ -47,10 +46,10 @@ struct 'embed' {
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `len` | `length` | `int` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
-| `dict` | `info`, `data` | `dict` | A dictionary representation of the embed. Useful for convenient transfer. |
+| `len` | `length` | `lurk[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
+| `dict` | `info`, `data` | `lurk[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | | `str` | The type of the embed. |
-| `fields` | | `list[embed.field]` | A list of fields to add to the embed. |
+| `fields` | | `list[embed.field]` | The fields of the embed. |
 
 ### `head`
 
@@ -90,6 +89,7 @@ struct 'embed' {
 ```coffee
 func create(ctx) [
   | type = "rich"
+  | dict = preset
   |
   | class head {
     text = sys.presets.blank
@@ -122,6 +122,22 @@ func create(ctx) [
 
 TBA.
 
+#### Example
+
+```coffee
+create discord.embed('content') [
+  | head.title = "Example Embed"
+  | body.text = "testing testing"
+  | foot.text = "sup"
+]
+
+create discord.embed('content') {
+  let head.title = "Example Embed"
+  let body.text = "testing *`head.title`* testing"
+  let foot.text = case(body.text)[lower]
+}
+```
+
 ### `clearFields`
 
 Clear fields from the embed.
@@ -141,15 +157,13 @@ func embed.clearFields(
 #### Example
 
 ```coffee
-create discord.embed('content') [...
-  | fields = (
-    embed.field()[title = "first" | text = "sup"],
-    embed.field()[title = "second" | text = "sup"],
-    embed.field()[title = "third" | text = "sup"],
-    embed.field()[title = "fourth" | text = "sup"],
-    embed.field()[title = "fifth" | text = "sup"],
-  )
-]
+create discord.embed('content') [... | fields = (
+  embed.field()[title = "first" | text = "sup"],
+  embed.field()[title = "second" | text = "sup"],
+  embed.field()[title = "third" | text = "sup"],
+  embed.field()[title = "fourth" | text = "sup"],
+  embed.field()[title = "fifth" | text = "sup"],
+)]
 
 content.clearFields(1)
 content.clearFields(2~3)
@@ -161,6 +175,8 @@ content.clearFields()
 
 ```coffee
 struct 'field' in embed {
+  lurk int 'index'
+
   str 'title' = sys.presets.blank
   str 'text' = sys.presets.blank
   bool 'inline' = false
