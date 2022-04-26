@@ -1,8 +1,9 @@
 # `colour`
 
-A Discord-specific colour.
+A collection of Discord-specific colours.
 
 ```coffee
-struct 'col', 'color', 'colour' {
-  
+class 'col', 'color', 'colour' {
+  'blurple' = 0x5865f2
 }
+```
