@@ -4,12 +4,12 @@ A Discord embed.
 
 ```coffee
 struct 'embed' {
-  lurk int 'len'
+  stat int 'len'
   pool 'type' = {rich, link, video}
-  dict 'dict'
+  stat dict 'dict'
   
   class 'head' {
-    str head.var('text', 'title') = sys.presets.blank
+    str head.var('text', 'title') = sys.inv.blank
     sys.url head.var('link', 'url') = none
     class 'author', 'user' {
       str class.var('text', 'name') = none
@@ -18,11 +18,11 @@ struct 'embed' {
     }
   }
   class 'body' {
-    str body.'text' = sys.presets.blank
+    str body.'text' = sys.inv.blank
     discord.col body.var('col', 'colour', 'color') = none
   }
   class 'foot' {
-    str foot.'text' = sys.presets.blank
+    str foot.'text' = sys.inv.blank
     sys.url foot.'icon' = none
     datix.time, datix.date, datix.datetime foot.var('time', 'timestamp') = none
   }
@@ -33,10 +33,10 @@ struct 'embed' {
 
   prop embed.'fields' [embed.field, list[embed.field]] = none
   
-  synth exp func 'add'
-  synth exp func 'insert'
-  synth exp func 'del'
-  synth exp func 'clear'
+  evo exp func 'add'
+  evo exp func 'insert'
+  evo exp func 'del'
+  evo exp func 'clear'
 
   substruct 'field'
 }
@@ -46,8 +46,8 @@ struct 'embed' {
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `len` | `length` | `lurk[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
-| `dict` | `info`, `data` | `lurk[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
+| `len` | `length` | `stat[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
+| `dict` | `info`, `data` | `stat[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | | `slot` | The type of the embed. |
 | `fields` | | `list[embed.field]` | The fields of the embed. |
 
@@ -90,7 +90,7 @@ func create(ctx) [
   | dict = preset
   |
   | class head {
-    text = sys.presets.blank
+    text = sys.inv.blank
     link = none
     class author {
       text = none
@@ -99,11 +99,11 @@ func create(ctx) [
     }
   }
   | class body {
-    text = sys.presets.blank
+    text = sys.inv.blank
     col = none
   }
   | class foot {
-    text = sys.presets.blank
+    text = sys.inv.blank
     icon = none
     time = none
   }
@@ -177,10 +177,10 @@ content.clearFields()
 
 ```coffee
 struct 'field' in embed {
-  lurk int 'index'
+  stat int 'index'
 
-  str 'title' = sys.presets.blank
-  str 'text' = sys.presets.blank
+  str 'title' = sys.inv.blank
+  str 'text' = sys.inv.blank
   bool 'inline' = false
 }
 ```
@@ -199,8 +199,8 @@ struct 'field' in embed {
 
 ```coffee
 func create(ctx) [
-  | title = sys.presets.blank
-  | text = sys.presets.blank
+  | title = sys.inv.blank
+  | text = sys.inv.blank
   | inline = false
 ]
 ```
