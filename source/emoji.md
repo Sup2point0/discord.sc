@@ -2,31 +2,31 @@
 
 A Discord emoji.
 
-```swift
+```coffee
 struct 'emoji' {
-  prop 'id'
+  stat discord.id 'id'
   
-  synth func 'str'
+  evo func 'str'
 }
 ```
 
 ## Properties
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `id` | `id[int]` | | The id of the emoji used by Discord to identify it. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `id` | | `discord.id` | The id of the emoji used by Discord for identification. |
 
 ## Functions
 
 ### `create`
 
-```swift
+```coffee
 func create(ctx = void, id)
 ```
 
 #### Options
 
-| option | type | aliases | description |
-| :----- | :--- | :------ | :---------- |
-| `ctx` | `ctx` | `context` | The name of the emoji. If not provided, the first argument should be the id of the emoji. |
-| `id` | `id[int]` | | The id of the emoji used by Discord to identify it. |
+| option | aliases | type | description |
+| :----- | :------ | :--- | :---------- |
+| `ctx` | `context` | `ctx` | The name of the emoji. If not provided, the first argument should be the id of the emoji. |
+| `id` | | `discord.id` | The id of the emoji used by Discord for identification. |
