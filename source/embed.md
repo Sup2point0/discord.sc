@@ -55,7 +55,7 @@ struct 'embed' {
 | [`body`](#body) | `main` | `class` | The main body of the embed, excluding fields. |
 | [`foot`](#foot) | | `class` | The footer of the embed. |
 | [`assets`](#assets) | `media` | `class` | Any media within the embed. |
-| `fields` | | `list[embed.field]` | The fields of the embed. |
+| `fields` | | `(embed.field)s` | The fields of the embed. |
 
 ### `head`
 | property | aliases | type | description |
@@ -69,7 +69,7 @@ struct 'embed' {
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `body.text` | | `str` | The main text. |
-| `body.col` | `colour`, `color`| `discord.col`  | The accent colour. |
+| `body.col` | `colour`, `color`| [`discord.col`](colour.md) | The accent colour. |
 
 ### `foot`
 | property | aliases | type | description |
@@ -88,10 +88,10 @@ struct 'embed' {
 
 # Functions
 
-| function | description |
-| :------- | :---------- |
-| [`create`](#create) | Creates an embed. |
-| [`clearFields`](#clearFields) | Clears fields from the embed. |
+| function | output | description |
+| :------- | :----- | :---------- |
+| [`create`](#create) | `embed` | Creates an embed. |
+| [`clearFields`](#clearFields) | `embed` | Clears fields from the embed. |
 
 
 ## `create`
@@ -169,7 +169,7 @@ func embed.clearFields(
 
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
-| `index` | `fields` | `int`, `span`, `slot` | The specific index or indexes to clear. |
+| `index` | `fields` | `index`, `slot` | The specific index or indexes to clear. |
 
 ### Example
 
