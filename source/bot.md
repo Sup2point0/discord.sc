@@ -25,7 +25,7 @@ struct 'bot' {
 ```coffee
 func create [
   | token = none
-  | intents = {discord.intents({none, default, all})}
+  | intents = {none, default, all}
   | prefix = ""
 ]
 ```
