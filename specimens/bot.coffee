@@ -4,12 +4,11 @@
 spec code { ver = 5.4 | syn = utinax | sty = stan }
 
 enable sys
-locate discord { ver = 1.2 }
+activate securex
 
+locate discord { ver = 1.2 }
 active discord
 activate slash in discord
-
-activate securex
 
 
 create discord.bot('bot') [
