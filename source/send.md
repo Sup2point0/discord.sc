@@ -1,15 +1,15 @@
 ## `send`
 
-```
+```coffee
 func discord.channel.send(str 'content' = none) [
-  | 'react' = none
-  | 'stickers' = none
-  | 'attach' = none
-  | 'embed' = none
-  | 'embeds' = none
-  | 'view' = none
-  | 'views' = none
-  | 'delete' = 0.0
+  | react = none
+  | stickers = none
+  | attach = none
+  | embed = none
+  | embeds = none
+  | view = none
+  | views = none
+  | delete = 0.0
 ]
 ```
 
@@ -28,7 +28,7 @@ func discord.channel.send(str 'content' = none) [
 
 ### Example
 
-```
+```coffee
 discord.channel(...).send("sup") [
   | attach = sys.file('sup.svg')
   | embed = discord.embed() [...] {...}
@@ -38,16 +38,16 @@ discord.channel(...).send("sup") [
 
 ## `reply`
 
-```
+```coffee
 func discord.message.reply(str 'content' = none) [
-  | bool 'mention' = false
-  | 'react' = none
-  | 'stickers' = none
-  | 'attach' = none
-  | 'embed' = none
-  | 'embeds' = none
-  | 'view' = none
-  | 'views' = none
-  | 'delete' = 0.0
+  | mention = false
+  | react = none
+  | stickers = none
+  | attach = none
+  | embed = none
+  | embeds = none
+  | view = none
+  | views = none
+  | delete = 0.0
 ]
 ```
