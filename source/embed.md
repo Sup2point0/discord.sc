@@ -159,7 +159,7 @@ func embed.clearFields(
 #### Example
 
 ```coffee
-create discord.embed('content') [... | fields = (
+create discord.embed('content') [title = "Example Embed | fields = (
   embed.field()[title = "first" | text = "sup"],
   embed.field()[title = "second" | text = "sup"],
   embed.field()[title = "third" | text = "sup"],
