@@ -9,6 +9,9 @@ struct 'view' {
 }
 ```
 
+<br>
+---
+<br>
 
 # `button`
 
