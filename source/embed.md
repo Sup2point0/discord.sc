@@ -51,10 +51,10 @@ struct 'embed' {
 | `len` | `length` | `stat[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
 | `dict` | `info`, `data` | `stat[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | | `slot` | The type of the embed. |
-| `head` | | `class` | The header of the embed. |
-| `body` | `main` | `class` | The main body of the embed, excluding fields. |
-| `foot` | | `class` | The footer of the embed. |
-| `assets` | `media` | `class` | Any media within the embed. |
+| [`head`](#head) | | `class` | The header of the embed. |
+| [`body`](#body) | `main` | `class` | The main body of the embed, excluding fields. |
+| [`foot`](#foot) | | `class` | The footer of the embed. |
+| [`assets`](#assets) | `media` | `class` | Any media within the embed. |
 | `fields` | | `list[embed.field]` | The fields of the embed. |
 
 ### `head`
@@ -87,6 +87,12 @@ struct 'embed' {
 <br>
 
 # Functions
+
+| function | description |
+| :------- | :---------- |
+| [`create`](#create) | Creates an embed. |
+| [`clearFields`](#clearFields) | Clears fields from the embed. |
+
 
 ## `create`
 
@@ -151,7 +157,7 @@ create discord.embed('content') {
 
 ## `clearFields`
 
-Clear fields from the embed.
+Clears fields from the embed.
 
 ```coffee
 func embed.clearFields(
@@ -181,8 +187,7 @@ content.clearFields(2~3)
 content.clearFields()
 ```
 
-<br>
-<br>
+---
 
 # `embed.field`
 
