@@ -42,6 +42,7 @@ struct 'embed' {
 }
 ```
 
+<br>
 
 # Properties
 
@@ -83,6 +84,7 @@ struct 'embed' {
 | `assets.thumb` | `thumbnail`, `icon`| `sys.url`  | The thumbnail. |
 | `assets.image` | | `sys.url` | The image. |
 
+<br>
 
 # Functions
 
@@ -180,6 +182,7 @@ content.clearFields()
 ```
 
 <br>
+<br>
 
 # `embed.field`
 
@@ -193,6 +196,7 @@ struct 'field' in embed {
 }
 ```
 
+<br>
 
 # Properties
 
@@ -202,6 +206,7 @@ struct 'field' in embed {
 | `text` | `value` | `str` | The main text. |
 | `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
 
+<br>
 
 # Functions
 
