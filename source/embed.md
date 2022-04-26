@@ -31,7 +31,7 @@ struct 'embed' {
     sys.url 'image' = none
   }
 
-  embed.(field)s 'fields' = none
+  (field)s 'fields' = none
   
   evo exp func 'add'
   evo exp func 'insert'
@@ -42,7 +42,7 @@ struct 'embed' {
 }
 ```
 
-## Properties
+# Properties
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
@@ -82,9 +82,9 @@ struct 'embed' {
 | `assets.thumb` | `thumbnail`, `icon`| `sys.url`  | The thumbnail. |
 | `assets.image` | | `sys.url` | The image. |
 
-## Functions
+# Functions
 
-### `create`
+## `create`
 
 Creates an embed.
 
@@ -120,11 +120,11 @@ func create(ctx) [
 ]
 ```
 
-#### Inputs
+### Inputs
 
 TBA.
 
-#### Examples
+### Examples
 
 ```coffee
 create discord.embed('content') [
@@ -144,7 +144,7 @@ create discord.embed('content') {
 }
 ```
 
-### `clearFields`
+## `clearFields`
 
 Clear fields from the embed.
 
@@ -154,13 +154,13 @@ func embed.clearFields(
 )
 ```
 
-#### Inputs
+### Inputs
 
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
 | `index` | `fields` | `int`, `span`, `slot` | The specific index or indexes to clear. |
 
-#### Example
+### Example
 
 ```coffee
 create discord.embed('content') [title = "Example Embed | fields = (
@@ -189,7 +189,7 @@ struct 'field' in embed {
 }
 ```
 
-## Properties
+# Properties
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
@@ -197,9 +197,9 @@ struct 'field' in embed {
 | `text` | `value` `str` | | The main text. |
 | `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
 
-## Functions
+# Functions
 
-### `create`
+## `create`
 
 ```coffee
 func create(ctx) [
@@ -209,7 +209,7 @@ func create(ctx) [
 ]
 ```
 
-#### Inputs
+### Inputs
 
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
