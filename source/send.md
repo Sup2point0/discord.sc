@@ -17,14 +17,12 @@ func discord.channel.send(str 'content' = none) [
 
 | input | type | description |
 | :---- | :--- | :---------- |
-| `react` | `discord.emoji`, `list(discord.emoji)` | |
-| `stickers` | `discord.sticker`, `list[discord.sticker]` | |
-| `attach` | `discord.attachment`, `list(discord.attachment)` | |
-| `embed` | `discord.embed` | |
-| `embeds` | `discord.embed`, `list(discord.embed)` | |
-| `view` | `discord.view` | |
-| `views` | `discord.view`, `list(discord.view)` | |
-| `delete` | `float`, `datix.time`, `datix.date`, `datix.datetime` | |
+| `react` | [`discord.(emoji)s`](emoji.md) | Reaction(s) to add. |
+| `sticker` | [`discord.(sticker)s`](sticker.md) | Sticker(s) to add. |
+| `attach` | [`discord.(attachment)s`](attachment.md) | Attachment(s) to upload. |
+| `embed` | [`discord.(embed)s`](embed.md) | Embed(s) to add. |
+| `view` | [`discord.(view)s`](view.md) | View(s) to add. |
+| `delete` | `float`, `datix.time`, `datix.date`, `datix.datetime` | The duration after which to delete the message. |
 
 ### Example
 
