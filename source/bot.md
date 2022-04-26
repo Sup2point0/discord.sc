@@ -10,17 +10,28 @@ struct 'bot' {
 }
 ```
 
-## Properties
+<br>
+
+# Properties
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `token` | `key` | `discord.id` | The API key of the bot. |
-| `intents` | | `slot` | The intents the bot will be subscribed to. |
-| `prefix` | `command_prefix` | `(str)s` | The prefix that precedes all commands. |
+| `token` | `key` | `discord.id` | API key of the bot. |
+| `intents` | | `slot` | Intents the bot will be subscribed to. |
+| `prefix` | `command_prefix` | `(str)s` | Prefix that precedes all commands. |
 
-## Functions
+<br>
 
-### `create`
+# Functions
+
+| function | output | description |
+| :------- | :----- | :---------- |
+| `create` | `bot` | Creates a bot. |
+
+
+## `create`
+
+Creates a bot.
 
 ```coffee
 func create [

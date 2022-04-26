@@ -2,7 +2,6 @@
 
 A Discord view.
 
-
 ```coffee
 struct 'view' {
   numc 'timeout' = none

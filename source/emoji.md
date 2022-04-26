@@ -10,21 +10,32 @@ struct 'emoji' {
 }
 ```
 
-## Properties
+<br>
+
+# Properties
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `id` | | `discord.id` | The id of the emoji used by Discord for identification. |
 
-## Functions
+<br>
 
-### `create`
+# Functions
+
+| function | output | description |
+| :------- | :----- | :---------- |
+| `create` | `emoji` | Creates an emoji. |
+
+
+## `create`
+
+Creates an emoji.
 
 ```coffee
 func create(ctx = void, id)
 ```
 
-#### Options
+## Options
 
 | option | aliases | type | description |
 | :----- | :------ | :--- | :---------- |
