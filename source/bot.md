@@ -4,7 +4,7 @@ A Discord bot.
 
 ```coffee
 struct 'bot' {
-  sys.token 'token' = none
+  discord.id 'token' = none
   pool 'intents' = {default}
   str 'prefix' = ""
 }
@@ -12,11 +12,11 @@ struct 'bot' {
 
 ## Properties
 
-| property | type | aliases | description |
-| :------- | :--- | :------ | :---------- |
-| `token` | `discord.token` | `key` | The API key of the bot. |
-| `intents` | `slot` | | The intents the bot will be subscribed to. |
-| `prefix` | `str`, `list[str]` | `command_prefix` | The prefix that precedes all commands. |
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+| `token` | `key` | `discord.id` | The API key of the bot. |
+| `intents` | | `slot` | The intents the bot will be subscribed to. |
+| `prefix` | `command_prefix` | `(str)s` | The prefix that precedes all commands. |
 
 ## Functions
 
@@ -30,5 +30,5 @@ func create [
 ]
 ```
 
-| option | type | aliases | description |
-| :----- | :--- | :------ | :---------- |
+| option | aliases | type | description |
+| :----- | :------ | :--- | :---------- |
