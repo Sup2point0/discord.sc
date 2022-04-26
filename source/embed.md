@@ -161,7 +161,7 @@ Clears fields from the embed.
 
 ```coffee
 func embed.clearFields(
-  par('index')[index, slot] = {all}
+  index, slot 'index' = {all}
 )
 ```
 
