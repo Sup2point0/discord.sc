@@ -4,34 +4,34 @@ A Discord embed.
 
 ```coffee
 struct 'embed' {
-  stat int 'len'
+  intr int 'len'
   pool 'type' = {rich, link, video}
   stat dict 'dict'
   
   class 'head' {
-    str head.var('text', 'title') = sys.inv.blank
-    sys.url head.var('link', 'url') = none
-    class 'author', 'user' {
-      str class.var('text', 'name') = none
-      sys.url class.var('link', 'url') = none
-      sys.url class.'icon' = none
+    str 'text' = sys.inv.blank
+    sys.url 'link' = none
+    class 'author' {
+      str 'text' = none
+      sys.url 'link' = none
+      sys.url 'icon' = none
     }
   }
   class 'body' {
-    str body.'text' = sys.inv.blank
-    discord.col body.var('col', 'colour', 'color') = none
+    str 'text' = sys.inv.blank
+    discord.col 'col' = none
   }
   class 'foot' {
-    str foot.'text' = sys.inv.blank
-    sys.url foot.'icon' = none
-    datix.time, datix.date, datix.datetime foot.var('time', 'timestamp') = none
+    str 'text' = sys.inv.blank
+    sys.url 'icon' = none
+    datix.time, datix.date, datix.datetime 'time' = none
   }
-  class 'assets', 'media' {
-    sys.url class.var('thumb', 'thumbnail', 'icon') = none
-    sys.url class.'image' = none
+  class 'assets' {
+    sys.url 'thumb' = none
+    sys.url 'image' = none
   }
 
-  prop embed.'fields' [embed.field, list[embed.field]] = none
+  prop embed.(field)s 'fields' = none
   
   evo exp func 'add'
   evo exp func 'insert'
@@ -49,6 +49,10 @@ struct 'embed' {
 | `len` | `length` | `stat[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
 | `dict` | `info`, `data` | `stat[dict]` | A dictionary representation of the embed. Useful for convenient transfer. |
 | `type` | | `slot` | The type of the embed. |
+| `head` | | `class` | The header of the embed. |
+| `body` | `main` | `class` | The main body of the embed, excluding fields. |
+| `foot` | | `class` | The footer of the embed. |
+| `assets` | `media` | `class` | Any media within the embed. |
 | `fields` | | `list[embed.field]` | The fields of the embed. |
 
 ### `head`
@@ -86,8 +90,8 @@ Creates an embed.
 
 ```coffee
 func create(ctx) [
-  | type = "rich"
-  | dict = preset
+  | type = {rich, link, video}
+  | dict = auto
   |
   | class head {
     text = sys.inv.blank
