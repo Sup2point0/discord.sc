@@ -34,6 +34,8 @@ discord.channel(...).send("sup") [
 ]
 ```
 
+<br>
+
 ## `reply`
 
 ```coffee
