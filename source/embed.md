@@ -31,7 +31,7 @@ struct 'embed' {
     sys.url 'image' = none
   }
 
-  prop embed.(field)s 'fields' = none
+  embed.(field)s 'fields' = none
   
   evo exp func 'add'
   evo exp func 'insert'
