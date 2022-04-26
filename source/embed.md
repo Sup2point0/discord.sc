@@ -19,7 +19,7 @@ struct 'embed' {
   }
   class 'body' {
     str 'text' = sys.inv.blank
-    discord.col 'col' = none
+    hex 'col' = none
   }
   class 'foot' {
     str 'text' = sys.inv.blank
