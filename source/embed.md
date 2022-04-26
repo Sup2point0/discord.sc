@@ -42,6 +42,7 @@ struct 'embed' {
 }
 ```
 
+
 # Properties
 
 | property | aliases | type | description |
@@ -81,6 +82,7 @@ struct 'embed' {
 | :------- | :------ | :--- | :---------- |
 | `assets.thumb` | `thumbnail`, `icon`| `sys.url`  | The thumbnail. |
 | `assets.image` | | `sys.url` | The image. |
+
 
 # Functions
 
@@ -144,6 +146,7 @@ create discord.embed('content') {
 }
 ```
 
+
 ## `clearFields`
 
 Clear fields from the embed.
@@ -163,7 +166,7 @@ func embed.clearFields(
 ### Example
 
 ```coffee
-create discord.embed('content') [title = "Example Embed | fields = (
+create discord.embed('content') [title = "Example Embed" | fields = (
   embed.field()[title = "first" | text = "sup"],
   embed.field()[title = "second" | text = "sup"],
   embed.field()[title = "third" | text = "sup"],
@@ -176,6 +179,7 @@ content.clearFields(2~3)
 content.clearFields()
 ```
 
+<br>
 
 # `embed.field`
 
@@ -189,13 +193,15 @@ struct 'field' in embed {
 }
 ```
 
+
 # Properties
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `title` | `name` `str` | | The title text. |
-| `text` | `value` `str` | | The main text. |
+| `title` | `name` | `str` | The title text. |
+| `text` | `value` | `str` | The main text. |
 | `inline` | | `bool` | Whether or not the field is inline. If `true`, the field before it must also be inline for it have effect. |
+
 
 # Functions
 
