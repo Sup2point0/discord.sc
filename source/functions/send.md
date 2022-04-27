@@ -17,14 +17,14 @@ func discord.channel.send(str 'content' = none) [
 
 ### Inputs
 
-| input | default | type | description |
+| input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
-| `react` | `none` | [`discord.(emoji)s`](emoji.md) | Reaction(s) to add. |
-| `sticker` | `none` | [`discord.(sticker)s`](sticker.md) | Sticker(s) to add. |
-| `attach` | `none` | [`discord.(attachment)s`](attachment.md) | Attachment(s) to upload. |
-| `embed` | `none` | [`discord.(embed)s`](embed.md) | Embed(s) to add. |
-| `view` | `none` | [`discord.(view)s`](view.md) | View(s) to add. |
-| `delete` | `0.0` | `float`, `datix.time`, `datix.date`, `datix.datetime` | The duration after which to delete the message. |
+| `react` | `reactions` | [`discord.(emoji)s`](emoji.md) | Reaction(s) to add. |
+| `sticker` | `stickers` | [`discord.(sticker)s`](sticker.md) | Sticker(s) to add. |
+| `attach` | `attachments` | [`discord.(attachment)s`](attachment.md) | Attachment(s) to upload. |
+| `embed` | `embeds` | [`discord.(embed)s`](embed.md) | Embed(s) to add. |
+| `view` | `views` | [`discord.(view)s`](view.md) | View(s) to add. |
+| `delete` | `delete_after` | `float`, `datix.time`, `datix.date`, `datix.datetime` | The duration after which to delete the message. |
 
 ### Example
 
@@ -39,6 +39,8 @@ discord.channel(...).send("sup") [
 <br>
 
 ## `reply`
+
+Replies to a message.
 
 ```coffee
 func discord.message.reply(str 'content' = none) [
