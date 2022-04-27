@@ -9,6 +9,14 @@ struct 'view' {
 ```
 
 <br>
+
+# Properties
+
+<br>
+
+# Functions
+
+<br>
 ---
 <br>
 
@@ -32,3 +40,11 @@ struct 'button' in view {
   intr discord.view 'view'
 }
 ```
+
+<br>
+
+# Properties
+
+<br>
+
+# Functions

@@ -16,7 +16,7 @@ struct 'emoji' {
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `id` | | `discord.id` | The id of the emoji used by Discord for identification. |
+| `id` | `token` | `discord.id` | The id of the emoji used by Discord for identification. |
 
 <br>
 

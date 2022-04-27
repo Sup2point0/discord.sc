@@ -3,7 +3,7 @@
 A Discord user.
 
 ```coffee
-struct 'user' {
+struct 'user' [channel] {
   intr discord.id 'id'
   intr str 'shard'
 
@@ -11,5 +11,15 @@ struct 'user' {
   class 'avatar' {
     intr sys.url 'url'
   }
+
+  synth func 'mention'
 }
 ```
+
+<br>
+
+# Properties
+
+<br>
+
+# Functions

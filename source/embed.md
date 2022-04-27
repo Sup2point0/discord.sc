@@ -33,10 +33,10 @@ struct 'embed' {
 
   (field)s 'fields' = none
   
-  evo exp func 'add'
-  evo exp func 'insert'
-  evo exp func 'del'
-  evo exp func 'clear'
+  exp evo func 'add'
+  exp evo func 'insert'
+  exp evo func 'del'
+  exp evo func 'clear'
 
   func 'clearFields'
 
@@ -101,7 +101,7 @@ struct 'embed' {
 Creates an embed.
 
 ```coffee
-func create(ctx) [
+func[evo] create(ctx) [
   | type = {rich, link, video}
   | dict = auto
   |

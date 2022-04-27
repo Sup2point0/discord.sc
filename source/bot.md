@@ -16,7 +16,7 @@ struct 'bot' {
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
-| `token` | `key` | `discord.id` | API key of the bot. |
+| `token` | `key` | `discord.token` | API key of the bot. |
 | `intents` | | `slot` | Intents the bot will be subscribed to. |
 | `prefix` | `command_prefix` | `(str)s` | Prefix that precedes all commands. |
 
@@ -34,7 +34,7 @@ struct 'bot' {
 Creates a bot.
 
 ```coffee
-func create [
+evo func create [
   | token = none
   | intents = {none, default, all}
   | prefix = ""
