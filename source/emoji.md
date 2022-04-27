@@ -4,7 +4,7 @@ A Discord emoji.
 
 ```coffee
 struct 'emoji' {
-  stat discord.id 'id'
+  intr discord.id 'id'
   
   evo func 'str'
 }
