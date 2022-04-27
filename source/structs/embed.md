@@ -5,7 +5,7 @@ A Discord embed.
 ```coffee
 struct 'embed' {
   intr int 'len'
-  pool 'type' = {rich, link, video}
+  pool 'type' = {rich, image, video, gifv, article, link}
   stat dict 'dict'
   
   class 'head' {
