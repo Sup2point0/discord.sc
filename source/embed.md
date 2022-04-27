@@ -194,7 +194,7 @@ content.clearFields()
 # `embed.field`
 
 ```coffee
-struct 'field' in embed {
+struct embed.'field' {
   stat int 'index'
 
   str 'title' = sys.inv.blank
