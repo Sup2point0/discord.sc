@@ -1,5 +1,7 @@
 ## `send`
 
+Sends a message to a channel.
+
 ```coffee
 func discord.channel.send(str 'content' = none) [
   | react = none
