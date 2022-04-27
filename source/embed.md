@@ -38,6 +38,8 @@ struct 'embed' {
   evo exp func 'del'
   evo exp func 'clear'
 
+  func 'clearFields'
+
   substruct 'field'
 }
 ```
@@ -55,7 +57,7 @@ struct 'embed' {
 | [`body`](#body) | `main` | `class` | The main body of the embed, excluding fields. |
 | [`foot`](#foot) | | `class` | The footer of the embed. |
 | [`assets`](#assets) | `media` | `class` | Any media within the embed. |
-| `fields` | | `(embed.field)s` | The fields of the embed. |
+| `fields` | | [`(embed.field)s`](#embedfield) | The fields of the embed. |
 
 ### `head`
 | property | aliases | type | description |
@@ -90,8 +92,8 @@ struct 'embed' {
 
 | function | output | description |
 | :------- | :----- | :---------- |
-| [`create`](#create) | `embed` | Creates an embed. |
-| [`clearFields`](#clearFields) | `embed` | Clears fields from the embed. |
+| [`create`](#create) | [`embed`](#embed) | Creates an embed. |
+| [`clearFields`](#clearFields) | [`embed`](#embed) | Clears fields from the embed. |
 
 
 ## `create`
@@ -162,7 +164,7 @@ Clears fields from the embed.
 ```coffee
 func embed.clearFields(
   index, slot 'index' = {all}
-)
+) {} to embed
 ```
 
 ### Inputs
@@ -170,6 +172,12 @@ func embed.clearFields(
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
 | `index` | `fields` | `index`, `slot` | The specific index or indexes to clear. |
+
+### Outputs
+
+| output | type | source | notes |
+| :----- | :--- | :----- | :---- |
+| the embed itself | [`embed`](#embed) | always | Allows for fluent chaining with other functions. |
 
 ### Example
 
