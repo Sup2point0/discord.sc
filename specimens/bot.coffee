@@ -7,7 +7,7 @@ enable sys
 activate securex
 
 locate discord { ver = 1.2 }
-active discord
+activate discord
 activate slash in discord
 
 
@@ -34,41 +34,41 @@ create discord.command 'sup' {
 }
 
 create discord.command 'complex' {
-  define bot.multi(ctx, str(par1), int(par2), bool(par3)) {
+  define bot.multi(ctx, str('par1'), int('par2'), bool('par3')) {
     ...
   }
 }
 
 define bot.'help'(ctx) {
-  ctx.reply() [ embed = discord.embed() {
-    let head.title = "Help"
-    let body.col = 0x4090f1
-    let body.text = "A botnstrative advanced Discord bot, showcasing all of the capabilities of discord.sc"
-    let foot.text = "Requested by `ctx.user`",
-    let foot.time = ctx.time
-  }]
+  ctx.reply() [embed = discord.embed() [
+    | head.title = "Help"
+    | body.col = 0x4090f1
+    | body.text = "A botnstrative advanced Discord bot, showcasing all of the capabilities of discord.sc"
+    | foot.text = "Requested by `ctx.user`",
+    | foot.time = ctx.time
+  ]]
 }
 
-create discord.slash.command 'commands' [ desc = "view a list of available commands" ] {
+create discord.slash.command 'commands' [desc = "view a list of available commands"] {
   define bot.view(ctx) {
-    ctx.respond() [ embed = discord.embed() {
-      let head.title = "Commands"
-      let body.col = 0xff0090
-      let body.text = """
+    ctx.respond() [embed = discord.embed() [
+      | head.title = "Commands"
+      | body.col = 0xff0090
+      | body.text = """
         ...
       """
-      let foot.text = "Showing `body.text.len[line]` commands"
-    }]
+      | foot.text = "Showing `body.text.len[line]` commands"
+    ]]
   }
 }
 
-create discord.slash.command [ desc = "get profile picture of a user in the server" ] {
+create discord.slash.command [desc = "get profile picture of a user in the server"] {
   define bot.pfp(ctx, discord.member(user)) {
-    ctx.respond() [ attach = sys.file(user.avatar.url) | ephemeral = true ]
+    ctx.respond()[attach = sys.file(user.avatar) | ephemeral = true]
   }
 }
 
-create discord.slash.command [ desc = "" ] {
+create discord.slash.command [desc = ""] {
   define bot.func(ctx, discord.option(choice)[...]) {
     ...
   }
