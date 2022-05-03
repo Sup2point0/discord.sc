@@ -1,5 +1,4 @@
 ## `send`
-
 Sends a message to a channel.
 
 ```coffee
@@ -16,18 +15,16 @@ func discord.channel.send(str 'content' = none) [
 ```
 
 ### Inputs
-
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
 | `react` | `reactions` | [`discord.(emoji)s`](emoji.md) | Reaction(s) to add. |
 | `sticker` | `stickers` | [`discord.(sticker)s`](sticker.md) | Sticker(s) to add. |
-| `attach` | `attachments` | [`discord.(attachment)s`](attachment.md) | Attachment(s) to upload. |
+| `attach` | `attachments` | [`discord.(asset)s`](asset.md) | Attachment(s) to upload. |
 | `embed` | `embeds` | [`discord.(embed)s`](embed.md) | Embed(s) to add. |
 | `view` | `views` | [`discord.(view)s`](view.md) | View(s) to add. |
 | `delete` | `delete_after` | `float`, `datix.time`, `datix.date`, `datix.datetime` | The duration after which to delete the message. |
 
 ### Example
-
 ```coffee
 discord.channel(...).send("sup") [
   | attach = sys.file('sup.svg')
@@ -39,7 +36,6 @@ discord.channel(...).send("sup") [
 <br>
 
 ## `reply`
-
 Replies to a message.
 
 ```coffee

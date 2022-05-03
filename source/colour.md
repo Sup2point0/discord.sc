@@ -1,5 +1,4 @@
 # `colour`
-
 A collection of Discord-specific colours.
 
 ```coffee

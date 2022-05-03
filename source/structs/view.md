@@ -1,5 +1,4 @@
 # `view`
-
 A Discord view.
 
 ```coffee
@@ -11,17 +10,20 @@ struct 'view' {
 <br>
 
 # Properties
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
 
 <br>
 
 # Functions
+| function | output | description |
+| :------- | :----- | :---------- |
 
 <br>
 ---
 <br>
 
 # `button`
-
 A button within a view.
 
 ```coffee
@@ -44,7 +46,11 @@ struct 'button' in view {
 <br>
 
 # Properties
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
 
 <br>
 
 # Functions
+| function | output | description |
+| :------- | :----- | :---------- |

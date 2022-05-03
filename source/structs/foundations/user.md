@@ -1,5 +1,4 @@
 # `user`
-
 A Discord user.
 
 ```coffee
@@ -7,10 +6,9 @@ struct 'user' [channel] {
   intr discord.id 'id'
   intr str 'shard'
 
-  intr sys.file 'avatar'
-  class 'avatar' {
-    intr sys.url 'url'
-  }
+  intr str 'str'
+
+  intr discord.asset 'avatar'
 
   synth func 'mention'
 }

@@ -1,5 +1,4 @@
 # `embed`
-
 A Discord embed.
 
 ```coffee
@@ -47,7 +46,6 @@ struct 'embed' {
 <br>
 
 # Properties
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `len` | `length` | `stat[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
@@ -89,7 +87,6 @@ struct 'embed' {
 <br>
 
 # Functions
-
 | function | output | description |
 | :------- | :----- | :---------- |
 | [`create`](#create) | [`embed`](#embed) | Creates an embed. |
@@ -97,7 +94,6 @@ struct 'embed' {
 
 
 ## `create`
-
 Creates an embed.
 
 ```coffee
@@ -133,11 +129,9 @@ func[evo] create(ctx) [
 ```
 
 ### Inputs
-
 TBA.
 
 ### Examples
-
 ```coffee
 create discord.embed('content') [
   | head.title = "Example Embed"
@@ -158,7 +152,6 @@ create discord.embed('content') {
 
 
 ## `clearFields`
-
 Clears fields from the embed.
 
 ```coffee
@@ -168,19 +161,16 @@ func embed.clearFields(
 ```
 
 ### Inputs
-
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
 | `index` | `fields` | `index`, `slot` | The specific index or indexes to clear. |
 
 ### Outputs
-
 | output | type | source | notes |
 | :----- | :--- | :----- | :---- |
 | the embed itself | [`embed`](#embed) | always | Allows for fluent chaining with other functions. |
 
 ### Example
-
 ```coffee
 create discord.embed('content') [title = "Example Embed" | fields = (
   embed.field()[title = "first" | text = "sup"],
@@ -214,7 +204,6 @@ struct embed.'field' {
 <br>
 
 # Properties
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `title` | `name` | `str` | The title text. |
@@ -226,6 +215,7 @@ struct embed.'field' {
 # Functions
 
 ## `create`
+Creates an embed field.
 
 ```coffee
 func create(ctx) [
@@ -236,7 +226,6 @@ func create(ctx) [
 ```
 
 ### Inputs
-
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
 | `title` | `name` | `str` | The title text. |

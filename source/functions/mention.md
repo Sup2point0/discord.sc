@@ -1,18 +1,17 @@
 ## `mention`
-
 Mentions a particular Discord component.
 
 ```coffee
-func mention(object)
+func mention(object) {
+  
+}
 ```
 
 ### Inputs
-
 | input | default | type | description |
 | :---- | :------ | :--- | :---------- |
 
 ### Example
-
 ```coffee
 set 'channel' = discord.channel(...)
 set 'ping' = discord.mention(discord.user(...))

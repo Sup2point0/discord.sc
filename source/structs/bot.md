@@ -1,5 +1,4 @@
 # `bot`
-
 A Discord bot.
 
 ```coffee
@@ -13,7 +12,6 @@ struct 'bot' {
 <br>
 
 # Properties
-
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `token` | `key` | `discord.token` | API key of the bot. |
@@ -23,14 +21,12 @@ struct 'bot' {
 <br>
 
 # Functions
-
 | function | output | description |
 | :------- | :----- | :---------- |
 | `create` | `bot` | Creates a bot. |
 
 
 ## `create`
-
 Creates a bot.
 
 ```coffee
