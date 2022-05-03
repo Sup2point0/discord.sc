@@ -18,7 +18,7 @@ Discord-specific errors.
 
 Here’s a quick showcase of a simple Discord bot:
 
-```coffeescript
+```coffee
 spec code { ver = 5.4 | syn = utinax | sty = stan }
 
 activate discord { ver = 1.2 }

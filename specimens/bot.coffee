@@ -8,7 +8,7 @@ activate securex
 
 locate discord { ver = 1.2 }
 activate discord
-activate slash in discord
+activate discord.slash
 
 
 create discord.bot('bot') [
