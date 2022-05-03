@@ -6,9 +6,13 @@ A slash command option.
 struct 'option' {
   str 'name' = default
   str description = none
-  pool, dict 'options' = none
+  type, pool, dict 'options' = none
   opt 'default' = none
+  bool autocomplete = false
   bool required = true
+
+  int, float 'min' = none
+  int, float 'max' = none
 }
 ```
 
@@ -18,6 +22,14 @@ struct 'option' {
 
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
+| `name` | | `str` | The displayed name of the option. |
+| `description` | `desc` | `str` | The description of the option. |
+| `options` | `choices` | `type`, `pool`, `dict` |  |
+| `default` | | `opt` |  |
+| `autocomplete` | `autofill`, `auto` | `bool` |  |
+| `required` | `req` | `bool` |  |
+| `min` | | `int`, `float` |  |
+| `max` | | `int`, `float` |  |
 
 <br>
 
@@ -30,3 +42,9 @@ struct 'option' {
 
 ## `create`
 Creates a slash option.
+
+```coffee
+func[evo] create(ctx) {
+
+}
+```
