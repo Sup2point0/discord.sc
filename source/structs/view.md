@@ -21,6 +21,17 @@ struct 'view' {
 
 | function | output | description |
 | :------- | :----- | :---------- |
+| [`create`](create) | [`view`](#view) | Creates a view. |
+
+
+## `create`
+Creates a view.
+
+```coffee
+func[evo] create(ctx) {
+
+}
+```
 
 <br>
 ---
@@ -31,7 +42,7 @@ struct 'view' {
 A button within a view.
 
 ```coffee
-struct 'button' in view {
+struct view.'button' {
   discord.id 'id' = none
 
   str 'text' = sys.presets.blank
@@ -60,3 +71,14 @@ struct 'button' in view {
 
 | function | output | description |
 | :------- | :----- | :---------- |
+| [`create`](create) | [`view.button`](#button) | Creates a button. |
+
+
+## `create`
+Creates a button.
+
+```coffee
+func[evo] create(ctx) {
+
+}
+```

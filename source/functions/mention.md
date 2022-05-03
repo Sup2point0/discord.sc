@@ -2,7 +2,7 @@
 Mentions a particular Discord component.
 
 ```coffee
-func mention(object) {
+func 'mention'(object 'target' = none) {
   
 }
 ```
@@ -10,6 +10,7 @@ func mention(object) {
 ### Inputs
 | input | default | type | description |
 | :---- | :------ | :--- | :---------- |
+| `object` | `self`
 
 ### Example
 ```coffee

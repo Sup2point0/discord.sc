@@ -25,6 +25,7 @@ struct 'option' {
 
 | function | output | description |
 | :------- | :----- | :---------- |
+| [`create`](create) | [`slash.option`](#option) | Creates a slash option. |
 
 
 ## `create`

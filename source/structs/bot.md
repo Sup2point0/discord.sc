@@ -26,7 +26,7 @@ struct 'bot' {
 
 | function | output | description |
 | :------- | :----- | :---------- |
-| `create` | `bot` | Creates a bot. |
+| [`create`](create) | [`bot`](#bot) | Creates a bot. |
 
 
 ## `create`
