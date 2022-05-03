@@ -35,7 +35,11 @@ create discord.command 'sup' {
 
 create discord.command 'complex' {
   define bot.multi(ctx, str('par1'), int('par2'), bool('par3')) {
-    ...
+    if par3 {
+      if par2 > 2 {
+        ctx.out(str)
+      }
+    }
   }
 }
 
@@ -64,13 +68,20 @@ create discord.slash.command 'commands' [desc = "view a list of available comman
 
 create discord.slash.command [desc = "get profile picture of a user in the server"] {
   define bot.pfp(ctx, discord.member(user)) {
-    ctx.respond()[attach = sys.file(user.avatar) | ephemeral = true]
+    ctx.respond()[attach = user.avatar | ephemeral = true]
   }
 }
 
-create discord.slash.command [desc = ""] {
-  define bot.func(ctx, discord.option(choice)[...]) {
-    ...
+create discord.slash.command [desc = "select a colour role to add to your profile"] {
+  define bot.func(ctx, discord.option('col') [
+    | name = "colour"
+    | description = "pick a colour"
+    | options = {blue, red, green, purple, orange, pink, yellow}
+    | default = slot(blue)
+    | required = true
+  ]) {
+    role = ctx.guild.roles#(col)
+    ctx.user.addRole(role)
   }
 }
 
