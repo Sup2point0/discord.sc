@@ -1,4 +1,5 @@
 # `channel`
+
 A foundational structure for Discord channels.
 
 ```coffee
@@ -17,6 +18,12 @@ found struct 'channel' {
 
 # Properties
 
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+
 <br>
 
 # Functions
+
+| function | output | description |
+| :------- | :----- | :---------- |

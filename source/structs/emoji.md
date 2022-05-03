@@ -1,4 +1,5 @@
 # `emoji`
+
 A Discord emoji.
 
 ```coffee
@@ -12,6 +13,7 @@ struct 'emoji' {
 <br>
 
 # Properties
+
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `id` | `token` | `discord.id` | The id of the emoji used by Discord for identification. |
@@ -19,9 +21,10 @@ struct 'emoji' {
 <br>
 
 # Functions
+
 | function | output | description |
 | :------- | :----- | :---------- |
-| `create` | `emoji` | Creates an emoji. |
+| [`create`](#create) | [`emoji`](#emoji) | Creates an emoji. |
 
 
 ## `create`

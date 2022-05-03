@@ -34,6 +34,8 @@ discord.channel(...).send("sup") [
 ```
 
 <br>
+---
+<br>
 
 ## `reply`
 Replies to a message.

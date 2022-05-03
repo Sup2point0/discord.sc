@@ -1,4 +1,5 @@
 # `user`
+
 A Discord user.
 
 ```coffee
@@ -18,6 +19,12 @@ struct 'user' [channel] {
 
 # Properties
 
+| property | aliases | type | description |
+| :------- | :------ | :--- | :---------- |
+
 <br>
 
 # Functions
+
+| function | output | description |
+| :------- | :----- | :---------- |

@@ -1,4 +1,5 @@
 # `embed`
+
 A Discord embed.
 
 ```coffee
@@ -46,6 +47,7 @@ struct 'embed' {
 <br>
 
 # Properties
+
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `len` | `length` | `stat[int]` | The total character count of the embed, including titles and footers. Useful for checking if an embed is within the 6000 character count limit. |
@@ -87,6 +89,7 @@ struct 'embed' {
 <br>
 
 # Functions
+
 | function | output | description |
 | :------- | :----- | :---------- |
 | [`create`](#create) | [`embed`](#embed) | Creates an embed. |
@@ -191,6 +194,8 @@ content.clearFields()
 
 # `embed.field`
 
+An embed field.
+
 ```coffee
 struct embed.'field' {
   stat int 'index'
@@ -204,6 +209,7 @@ struct embed.'field' {
 <br>
 
 # Properties
+
 | property | aliases | type | description |
 | :------- | :------ | :--- | :---------- |
 | `title` | `name` | `str` | The title text. |
@@ -213,6 +219,11 @@ struct embed.'field' {
 <br>
 
 # Functions
+
+| function | output | description |
+| :------- | :----- | :---------- |
+| `create` | [`embed.field`](#embedfield) | Creates an embed field. |
+
 
 ## `create`
 Creates an embed field.

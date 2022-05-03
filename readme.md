@@ -1,15 +1,19 @@
 # discord.sc 1.2
+
 An endorsed supcode extension for interacting with the [Discord API](https://discord.com/developers/docs), specifically for creating bots.
+
 
 ## Subextensions
 
 ### [`slash`](slash)
 Slash commands implementation and functionality.
 
+
 ## Intrinsics
 
 ### [`disflux`](disflux)
 Discord-specific errors.
+
 
 ## Quick Specimen
 Here’s a quick showcase of a simple Discord bot:
@@ -31,6 +35,7 @@ demo.start()
 ```
 
 Many more examples can be found in [specimens](specimens).
+
 
 ## Syntax
 discord.sc encourages an object-oriented syntax style, although supports various others too.
