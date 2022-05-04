@@ -101,7 +101,7 @@ Creates an embed.
 
 ```coffee
 func[evo] create(ctx) [
-  | type = {rich, link, video}
+  | type = rich
   | dict = auto
   |
   | class head {
