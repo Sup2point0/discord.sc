@@ -5,7 +5,7 @@ A Discord bot.
 ```coffee
 struct 'bot' {
   discord.id 'token' = none
-  pool 'intents' {none, default, all} = slot(default)
+  pool[none | default | all] 'intents' = slot(default)
   str 'prefix' = ""
 }
 ```
