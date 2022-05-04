@@ -19,11 +19,11 @@ Discord-specific errors.
 Here’s a quick showcase of a simple Discord bot:
 
 ```coffee
-spec code { ver = 5.4 | syn = utinax | sty = stan }
+spec code { ver = 5.6 | syn = utinax | sty = stan }
 
 activate discord { ver = 1.2 }
 
-create discord.bot('demo') [token = sys.token('dQw4w9WgXcQ')] {
+create discord.bot('demo') [token = discord.token('dQw4w9WgXcQ')] {
   create discord.command 'sup' {
     define demo.sup(ctx) {
       ctx.reply("sup")
