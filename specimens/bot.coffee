@@ -36,7 +36,7 @@ create discord.command 'sup' {
 create discord.command 'complex' {
   define bot.multi(ctx, str('par1'), int('par2'), bool('par3')) {
     if par3 {
-      if par2 > 2 {
+      if par2 > 2.0 {
         ctx.out(str)
       }
     }
@@ -47,7 +47,7 @@ define bot.'help'(ctx) {
   ctx.reply() [embed = discord.embed() [
     | head.title = "Help"
     | body.col = 0x4090f1
-    | body.text = "A botnstrative advanced Discord bot, showcasing all of the capabilities of discord.sc"
+    | body.text = "A demonstrative advanced Discord bot, showcasing all of the capabilities of discord.sc"
     | foot.text = "Requested by `ctx.user`",
     | foot.time = ctx.time
   ]]

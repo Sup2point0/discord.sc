@@ -5,7 +5,7 @@ A Discord bot.
 ```coffee
 struct 'bot' {
   discord.id 'token' = none
-  pool 'intents' = {default}
+  pool 'intents' {none, default, all} = slot(default)
   str 'prefix' = ""
 }
 ```
@@ -35,8 +35,7 @@ Creates a bot.
 ```coffee
 evo func create [
   | token = none
-  | intents = {none, default, all}
-  | prefix = ""
+  | intents = default
 ]
 ```
 

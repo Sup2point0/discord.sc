@@ -5,7 +5,7 @@ A Discord embed.
 ```coffee
 struct 'embed' {
   intr int 'len'
-  pool 'type' = {rich, image, video, gifv, article, link}
+  pool 'type' {rich, image, video, gifv, article, link} = slot(rich)
   stat dict 'dict'
   
   class 'head' {
@@ -159,7 +159,7 @@ Clears fields from the embed.
 
 ```coffee
 func embed.clearFields(
-  index, slot 'index' = {all}
+  index, slot 'index' = slot(all)
 ) {} to embed
 ```
 
