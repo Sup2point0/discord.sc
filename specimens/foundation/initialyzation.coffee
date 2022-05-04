@@ -1,6 +1,7 @@
-spec code { ver = 5.4 | syn = utinax | sty = stan }
+spec code { ver = 5.6 | syn = utinax | sty = stan }
 
-activate discord  { ver = 1.2 }
+locate discord  { ver = 1.2 }
+activate discord
 
 
 create discord.bot 'name' [
