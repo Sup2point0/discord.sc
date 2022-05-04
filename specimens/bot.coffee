@@ -1,7 +1,7 @@
 \ extensive discord bot
 \ discord.sc specimen
 
-spec code { ver = 5.4 | syn = utinax | sty = stan }
+spec code { ver = 5.6 | syn = utinax | sty = stan }
 
 enable sys
 activate securex
@@ -96,7 +96,6 @@ on bot.command.call(ctx) {{
 
 on bot.interaction.call(ctx) {{
   sys.log(ctx.data)
-  
   if ctx.valid {
     sys.log("`ctx.user` used `ctx.command.name`")
     await bot.slash.process(ctx)
