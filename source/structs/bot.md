@@ -26,7 +26,8 @@ struct 'bot' {
 
 | function | output | description |
 | :------- | :----- | :---------- |
-| [`create`](create) | [`bot`](#bot) | Creates a bot. |
+| [`create`](#create) | [`bot`](#bot) | Creates a bot. |
+| [`start`](#start) | `none` | Starts the bot. |
 
 
 ## `create`
@@ -42,3 +43,11 @@ evo func create [
 ### Inputs
 | input | aliases | type | description |
 | :---- | :------ | :--- | :---------- |
+
+
+## `start`
+Starts the bot.
+
+```coffee
+evo func start() []
+```
